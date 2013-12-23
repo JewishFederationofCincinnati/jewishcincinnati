@@ -1,0 +1,346 @@
+
+body {
+  color: #8cb4b9;
+  background-color: #ffffff;
+}
+
+h1 {
+  color: #000000;
+}
+
+h2 {
+  color: #8cc87d;
+}
+
+h3 {
+  color: #fac80a;
+}
+
+a:hover {
+  color: #8cb4b9;
+}
+
+.form-submit {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.site-name {
+  color: #ffffff;
+}
+
+.site-slogan {
+  color: #ffffff;
+}
+
+.wrapper-footer {
+  color: #ffffff;
+}
+
+.deco-page-top .layer-a {
+  background-color: #5a87af;
+}
+
+.sidebar.left {
+}
+
+.sidebar.right {
+}
+
+.stack-messages a {
+  color: #8cb4b9;
+}
+
+.menu-dropdown .menu .menu {
+  border-color: #8cc87d;
+}
+
+.menu-dropdown .menu .expanded a {
+  border-color: transparent;
+}
+
+.menu-dropdown .menu .menu a {
+  color: #000000;
+}
+
+#block-feedback-feedback a {
+  background-color: #8cc87d;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+th {
+}
+
+td {
+}
+
+.stack-messages,.stack-messages ul,.stack-messages ul li {
+  color: #000000;
+}
+
+.wrapper-content .stack {
+  background-color: #ffffff;
+}
+
+#block-feedback-feedback a:hover {
+  background-color: #8cb4b9;
+}
+
+.controls.buttons a.activeSlide {
+  background-color: #faa330;
+}
+
+.stack-navigation .menu .expanded:hover a {
+  background-color: #ffffff;
+}
+
+.stack-navigation .menu .expanded:hover li a {
+  background-color: transparent;
+}
+
+.stack-navigation .menu .menu {
+  background-color: #ffffff;
+}
+
+a {
+  color: #5a87af;
+}
+
+a:link {
+  color: #5a87af;
+}
+
+a:visited {
+  color: #5a87af;
+}
+
+.node-faq-item h2.faq-item-inline-question-title a:active {
+  color: #5a87af;
+}
+
+a:focus {
+  color: #8cb4b9;
+}
+
+a:active {
+  color: #8cb4b9;
+}
+
+.active {
+  color: #8cb4b9;
+}
+
+li a.active {
+  color: #8cb4b9;
+}
+
+.stack-breadcrumb a {
+  color: #8cb4b9;
+}
+
+.stack-breadcrumb a:link {
+  color: #8cb4b9;
+}
+
+.stack-breadcrumb a:visited {
+  color: #8cb4b9;
+}
+
+.stack-breadcrumb a:hover {
+  color: #8cb4b9;
+}
+
+.stack-breadcrumb a:focus {
+  color: #8cb4b9;
+}
+
+.stack-breadcrumb a:active {
+  color: #8cb4b9;
+}
+
+.stack-messages a:link {
+  color: #8cb4b9;
+}
+
+.stack-messages a:visited {
+  color: #8cb4b9;
+}
+
+.wrapper-header {
+  color: #ffffff;
+}
+
+.wrapper-header a {
+  color: #ffffff;
+}
+
+.wrapper-header a:visited {
+  color: #ffffff;
+}
+
+.menu-dropdown .menu .expanded:hover > a {
+  color: #8cc87d;
+  border-color: #8cc87d;
+}
+
+.menu-dropdown .menu .active-trail > a {
+  color: #ffffff;
+}
+
+.menu-dropdown .menu .active-trail:hover > a {
+  color: #8cc87d;
+}
+
+.menu-dropdown .menu .menu a:visited {
+  color: #000000;
+}
+
+.menu-dropdown .menu .menu a:focus {
+  color: #000000;
+}
+
+.menu-dropdown .menu .menu a:active {
+  color: #5a87af;
+}
+
+.menu-dropdown .menu .menu li:hover > a {
+  color: #8cc87d;
+}
+
+.menu-dropdown .menu .menu a.active {
+  color: #5a87af;
+}
+
+.menu-dropdown .menu .menu li:hover > a.active {
+  color: #8cc87d;
+}
+
+.menu-dropdown .menu .menu .active-trail > a {
+  color: #5a87af;
+}
+
+.menu-dropdown .menu .menu .active-trail:hover > a {
+  color: #8cc87d;
+}
+
+.wrapper-footer h2 {
+  color: #fac80a;
+}
+
+.wrapper-footer h3 {
+  color: #ffffff;
+}
+
+.wrapper-footer a {
+  color: #ffffff;
+}
+
+.wrapper-footer a:link {
+  color: #ffffff;
+}
+
+.wrapper-footer a:visited {
+  color: #ffffff;
+}
+
+.wrapper-header a:hover {
+  color: #ffffff;
+}
+
+.wrapper-header a:focus {
+  color: #ffffff;
+}
+
+.wrapper-header a:active {
+  color: #ffffff;
+}
+
+.wrapper-header a.active {
+  color: #ffffff;
+}
+
+.stack-navigation a {
+  color: #faa330;
+}
+
+.stack-navigation a:visited {
+  color: #faa330;
+}
+
+.stack-navigation a:hover {
+  color: #ffffff;
+}
+
+.stack-navigation a:focus {
+  color: #ffffff;
+}
+
+.stack-navigation a:active {
+  color: #ffffff;
+}
+
+.stack-navigation a.active {
+  color: #ffffff;
+}
+
+h5 {
+  color: #000000;
+}
+
+h6 {
+  color: #000000;
+}
+
+fieldset legend {
+  color: #000000;
+}
+
+fieldset label {
+  color: #000000;
+}
+
+.sidebar h2 {
+  color: #fac80a;
+}
+
+h4 {
+  color: #fac80a;
+}
+
+th.active {
+}
+
+tr.even td {
+}
+
+table tbody tr.even td.active {
+  background-color: #000000;
+}
+
+table tbody tr.odd td.active {
+  background-color: #000000;
+}
+
+
+#preheader-first-region .level-1 a {
+  color: #ffffff;
+}
+
+#header-region .follow-links a {
+  color: #ffffff;
+}
+
+#preheader-second-region .level-1 a {
+  color: #ffffff;
+}
+
+#header-region .content .follow-links {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+#header-inner .col-c {
+  color: #ffffff;
+}
+

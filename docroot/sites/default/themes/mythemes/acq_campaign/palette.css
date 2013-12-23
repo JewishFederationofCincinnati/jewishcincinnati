@@ -1,0 +1,356 @@
+
+body {
+  color: #444444;
+  background-color: #ffffff;
+}
+
+h1 {
+  color: #212121;
+}
+
+h2 {
+  color: #cd1069;
+}
+
+h3 {
+  color: #4dabf5;
+}
+
+a:hover {
+  color: #444444;
+}
+
+.form-submit {
+  background-color: #ffffff;
+  color: #212121;
+}
+
+.site-name {
+  color: #ffffff;
+}
+
+.site-slogan {
+  color: #ffffff;
+}
+
+.wrapper-footer {
+  color: #ffffff;
+}
+
+.deco-page-top .layer-a {
+  background-color: #a42470;
+}
+
+.sidebar.left {
+}
+
+.sidebar.right {
+}
+
+.stack-messages a {
+  color: #444444;
+}
+
+.menu-dropdown .menu .menu {
+  border-color: #cd1069;
+}
+
+.menu-dropdown .menu .expanded a {
+  border-color: transparent;
+}
+
+.menu-dropdown .menu .menu a {
+  color: #212121;
+}
+
+#block-feedback-feedback a {
+  background-color: #cd1069;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+th {
+}
+
+td {
+}
+
+.stack-messages,.stack-messages ul,.stack-messages ul li {
+}
+
+.wrapper-content .stack {
+  background-color: #ffffff;
+}
+
+#block-feedback-feedback a:hover {
+  background-color: #444444;
+}
+
+.controls.buttons a.activeSlide {
+  background-color: #e1267c;
+}
+
+.stack-navigation .menu .expanded:hover a {
+  background-color: #ffffff;
+}
+
+.stack-navigation .menu .expanded:hover li a {
+  background-color: transparent;
+}
+
+.stack-navigation .menu .menu {
+  background-color: #ffffff;
+}
+
+a {
+  color: #a42470;
+}
+
+a:link {
+  color: #a42470;
+}
+
+a:visited {
+  color: #a42470;
+}
+
+.node-faq-item h2.faq-item-inline-question-title a:active {
+  color: #a42470;
+}
+
+a:focus {
+  color: #444444;
+}
+
+a:active {
+  color: #444444;
+}
+
+.active {
+  color: #444444;
+}
+
+li a.active {
+  color: #444444;
+}
+
+.stack-breadcrumb a {
+  color: #444444;
+}
+
+.stack-breadcrumb a:link {
+  color: #444444;
+}
+
+.stack-breadcrumb a:visited {
+  color: #444444;
+}
+
+.stack-breadcrumb a:hover {
+  color: #444444;
+}
+
+.stack-breadcrumb a:focus {
+  color: #444444;
+}
+
+.stack-breadcrumb a:active {
+  color: #444444;
+}
+
+.stack-messages a:link {
+  color: #444444;
+}
+
+.stack-messages a:visited {
+  color: #444444;
+}
+
+.wrapper-header {
+  color: #ffffff;
+}
+
+.wrapper-header a {
+  color: #ffffff;
+}
+
+.wrapper-header a:visited {
+  color: #ffffff;
+}
+
+.menu-dropdown .menu .expanded:hover > a {
+  color: #cd1069;
+  border-color: #cd1069;
+}
+
+.menu-dropdown .menu .active-trail > a {
+  color: #ffffff;
+}
+
+.menu-dropdown .menu .active-trail:hover > a {
+  color: #cd1069;
+}
+
+.menu-dropdown .menu .menu a:visited {
+  color: #212121;
+}
+
+.menu-dropdown .menu .menu a:focus {
+  color: #212121;
+}
+
+.menu-dropdown .menu .menu a:active {
+  color: #a42470;
+}
+
+.menu-dropdown .menu .menu li:hover > a {
+  color: #cd1069;
+}
+
+.menu-dropdown .menu .menu a.active {
+  color: #a42470;
+}
+
+.menu-dropdown .menu .menu li:hover > a.active {
+  color: #cd1069;
+}
+
+.menu-dropdown .menu .menu .active-trail > a {
+  color: #a42470;
+}
+
+.menu-dropdown .menu .menu .active-trail:hover > a {
+  color: #cd1069;
+}
+
+.wrapper-footer h2 {
+  color: #4dabf5;
+}
+
+.wrapper-footer h3 {
+  color: #ffffff;
+}
+
+.wrapper-footer a {
+  color: #ffffff;
+}
+
+.wrapper-footer a:link {
+  color: #ffffff;
+}
+
+.wrapper-footer a:visited {
+  color: #ffffff;
+}
+
+.wrapper-header a:hover {
+  color: #ffffff;
+}
+
+.wrapper-header a:focus {
+  color: #ffffff;
+}
+
+.wrapper-header a:active {
+  color: #ffffff;
+}
+
+.wrapper-header a.active {
+  color: #ffffff;
+}
+
+.stack-navigation a {
+  color: #e1267c;
+}
+
+.stack-navigation a:visited {
+  color: #e1267c;
+}
+
+.stack-navigation a:hover {
+  color: #ffffff;
+}
+
+.stack-navigation a:focus {
+  color: #ffffff;
+}
+
+.stack-navigation a:active {
+  color: #ffffff;
+}
+
+.stack-navigation a.active {
+  color: #ffffff;
+}
+
+h5 {
+  color: #212121;
+}
+
+h6 {
+  color: #212121;
+}
+
+fieldset legend {
+  color: #212121;
+}
+
+fieldset label {
+  color: #212121;
+}
+
+.sidebar h2 {
+  color: #4dabf5;
+}
+
+h4 {
+  color: #4dabf5;
+}
+
+th.active {
+}
+
+tr.even td {
+}
+
+table tbody tr.even td.active {
+}
+
+table tbody tr.odd td.active {
+}
+
+
+#precontent-third-region h2 {
+  border-color: transparent;
+}
+
+#precontent .col-third {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#precontent-first-region h2 {
+  border-color: transparent;
+}
+
+#precontent-second-region .middle {
+  background-color: #88c7f8;
+  border-color: transparent;
+}
+
+#precontent-first-region .middle {
+  border-color: transparent;
+}
+
+#precontent .col-first {
+  background-color: transparent;
+}
+
+#content-deco-top .layer-b {
+  background-color: transparent;
+}
+
+#precontent .box {
+  background-color: transparent;
+}
+

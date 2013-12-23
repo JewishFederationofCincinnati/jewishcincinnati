@@ -1,0 +1,67 @@
+
+
+#main .field-item p {
+  color: #002d62;
+}
+
+#main p strong {
+  color: #b63e97;
+}
+
+#banner {
+  color: #0076c0;
+}
+
+#content-deco-top .layer-a {
+  color: #0076c0;
+}
+
+#header-region #logo img {
+  padding-right: 9px;
+  padding-left: 74px;
+}
+
+.page-width #header-region .content ul {
+  padding-left: 0px;
+}
+
+#sidebar-b .form-item label {
+  color: #00afef;
+}
+
+#sidebar-a ul .level-1 {
+  color: #002d62;
+}
+
+#page-deco-bottom .layer-a {
+  background-image: none;
+}
+
+.level-1 a {
+  color: #002d62;
+}
+
+#header-region .content .follow-links {
+  border-right-width: 0px;
+  border-style: solid;
+  margin-right: 0px;
+  margin-top: 23px;
+}
+
+#sidebar-a h2 {
+  color: #fbb034;
+}
+
+#sidebar-a li a {
+  color: #00afef;
+}
+
+#sidebar-b h2 {
+  color: #fbb034;
+}
+
+#page-deco-top .layer-a {
+  background-image: none;
+  background-color: #0076c0;
+}
+

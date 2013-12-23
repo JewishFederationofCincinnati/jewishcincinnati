@@ -1,0 +1,138 @@
+
+
+#precontent-second-region h2 {
+  padding-left: 6px;
+  font-family: 'Helvetica Neue','Helvetica','Arial','sans-serif';
+  font-weight: bold;
+  text-decoration: none;
+  font-style: italic;
+  padding-top: 14px;
+}
+
+#precontent-first-region h2 {
+  padding-left: 8px;
+  font-family: 'Helvetica Neue','Helvetica','Arial','sans-serif';
+  font-weight: bold;
+  font-style: italic;
+  padding-top: 23px;
+  border-top-width: 0px;
+  border-style: solid;
+}
+
+#content-deco-top .layer-a {
+  background-image: url("http://jewishcincinnati.drupalgardens.com/sites/g/files/g1348021/themes/mythemes/acq_pamela_geller_session/images/content-background-left.png");
+}
+
+#precontent .col-second {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+#precontent-third-region h2 {
+  padding-left: 5px;
+  font-family: 'Helvetica Neue','Helvetica','Arial','sans-serif';
+  font-weight: bold;
+  text-decoration: none;
+  font-style: italic;
+  border-top-width: 14px;
+  border-style: solid;
+}
+
+#precontent-first-region .middle {
+  padding-left: 19px;
+  padding-top: 0px;
+  padding-bottom: 28px;
+  border-top-width: 0px;
+  border-style: solid;
+  margin-top: 0px;
+  background-image: url("images/background1_6.png");
+  background-repeat: no-repeat;
+  margin-left: 14px;
+  background-color: #ffcf7d;
+}
+
+#precontent-third-region .content {
+  padding-bottom: 7px;
+}
+
+#precontent .middle {
+  background-image: none;
+  background-repeat: no-repeat;
+}
+
+#content-inner .box {
+  background-image: none;
+}
+
+#precontent .box {
+  background-image: none;
+  padding-right: 0px;
+  padding-left: 0px;
+  border-right-width: 0px;
+  border-style: solid;
+}
+
+#precontent-second-region {
+  background-image: none;
+  padding-bottom: 0px;
+}
+
+#precontent-first-region a img {
+  padding-bottom: 35px;
+}
+
+#header-region .content .follow-links {
+  border-left-width: 0px;
+  border-style: solid;
+  padding-top: 19px;
+}
+
+#header-region #logo img {
+  padding-left: 73px;
+}
+
+#page-deco-bottom .layer-a {
+  background-image: none;
+}
+
+#page {
+  padding-bottom: 17px;
+}
+
+#precontent .col-first {
+  background-image: none;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  border-left-width: 0px;
+  border-style: solid;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+#precontent .col-third {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-image: none;
+  padding-left: 25px;
+  margin-left: 0px;
+}
+
+#precontent-second-region .middle {
+  padding-top: 0px;
+  padding-bottom: 22px;
+  padding-left: 32px;
+  border-top-width: 0px;
+  border-style: solid;
+  margin-top: 0px;
+  background-image: none;
+}
+
+#precontent {
+  padding-top: 0px;
+}
+
+#page-deco-top .layer-a {
+  background-image: none;
+  background-color: #0076c0;
+}
+
