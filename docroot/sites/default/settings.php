@@ -565,12 +565,13 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  */
 # $conf['allow_authorize_operations'] = FALSE;
 
+# Include local database settings.
 $dbsettings = dirname(__FILE__) . '/dbsettings.inc';
 if (is_readable($dbsettings)) {
   require $dbsettings;
 }
 
-$local_settings = dirname(__FILE__) . '/local.settings.inc';
-if (is_readable($local_settings)) {
-  require $local_settings;
+# Include Acquia web hosting settings.
+if (file_exists('/var/www/site-php')) {
+  require('/var/www/site-php/jewishcincinnati/jewishcincinnati-settings.inc');
 }
