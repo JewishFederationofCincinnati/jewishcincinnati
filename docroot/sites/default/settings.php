@@ -209,7 +209,6 @@
  *     'database' => '/path/to/databasefilename',
  *   );
  * @endcode
- */
 $databases = array (
   'default' =>
   array (
@@ -224,6 +223,7 @@ $databases = array (
     ),
   ),
 );
+ */
 
 /**
  * Access control for update.php script.
@@ -564,3 +564,13 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
+
+$dbsettings = dirname(__FILE__) . '/dbsettings.inc';
+if (is_readable($dbsettings)) {
+  require $dbsettings;
+}
+
+$local_settings = dirname(__FILE__) . '/local.settings.inc';
+if (is_readable($local_settings)) {
+  require $local_settings;
+}
