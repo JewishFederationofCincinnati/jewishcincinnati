@@ -320,19 +320,6 @@ function locale_form_path_admin_form_alter(&$form, &$form_state) {
 }
 
 /**
- * Implements hook_field_extra_fields().
- */
-function locale_field_extra_fields() {
-  $extra['user']['user']['form']['locale'] = array(
-    'label' => t('Language settings'),
-    'description' => t('Locale module form element.'),
-    'weight' => 1,
-  );
-
-  return $extra;
-}
-
-/**
  * Implements hook_form_FORM_ID_alter().
  */
 function locale_form_node_type_form_alter(&$form, &$form_state) {
@@ -985,7 +972,7 @@ function locale_css_alter(&$css) {
           // Replicate the same item, but with the RTL path and a little larger
           // weight so that it appears directly after the original CSS file.
           $item['data'] = $rtl_path;
-          $item['weight'] += 0.01;
+          $item['weight'] += 0.0001;
           $css[$rtl_path] = $item;
         }
       }

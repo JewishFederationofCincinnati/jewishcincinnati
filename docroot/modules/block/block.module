@@ -432,11 +432,10 @@ function _block_rehash($theme = NULL) {
       if (!isset($block['weight'])) {
         $block['weight'] = 0;
       }
-      // Blocks which are assigned to an invalid region inside a valid theme
-      // (for example, if the theme no longer defines the region the block was
-      // previously placed in) should be disabled.
-      if (!empty($block['region']) && $block['region'] != BLOCK_REGION_NONE && !empty($regions) && !isset($regions[$block['region']]) && $block['status'] == 1) {
+      if (!empty($block['region']) && $block['region'] != BLOCK_REGION_NONE && !isset($regions[$block['region']]) && $block['status'] == 1) {
         drupal_set_message(t('The block %info was assigned to the invalid region %region and has been disabled.', array('%info' => $block['info'], '%region' => $block['region'])), 'warning');
+        // Disabled modules are moved into the BLOCK_REGION_NONE later so no
+        // need to move the block to another region.
         $block['status'] = 0;
       }
       // Set region to none if not enabled and make sure status is set.
@@ -590,19 +589,6 @@ function block_form_user_profile_form_alter(&$form, &$form_state) {
       $form['block'] += $blocks;
     }
   }
-}
-
-/**
- * Implements hook_field_extra_fields().
- */
-function block_field_extra_fields() {
-  $extra['user']['user']['form']['block'] = array(
-    'label' => t('Personalize blocks'),
-    'description' => t('Block module form element.'),
-    'weight' => 3,
-  );
-
-  return $extra;
 }
 
 /**
@@ -853,8 +839,30 @@ function _block_render_blocks($region_blocks) {
   // Block caching is not compatible with node access modules. We also
   // preserve the submission of forms in blocks, by fetching from cache only
   // if the request method is 'GET' (or 'HEAD').
-
   $cacheable = !count(module_implements('node_grants')) && ($_SERVER['REQUEST_METHOD'] == 'GET' || $_SERVER['REQUEST_METHOD'] == 'HEAD');
+
+  // Proceed to loop over all blocks in order to compute their respective cache
+  // identifiers; this allows us to do one single cache_get_multiple() call
+  // instead of doing one cache_get() call per block.
+  $cached_blocks = array();
+  $cids = array();
+
+  if ($cacheable) {
+    foreach ($region_blocks as $key => $block) {
+      if (!isset($block->content)) {
+        if (($cid = _block_get_cache_id($block))) {
+          $cids[$key] = $cid;
+        }
+      }
+    }
+
+    if ($cids) {
+      // We cannot pass $cids in directly because cache_get_multiple() will
+      // modify it, and we need to use it later on in this function.
+      $cid_values = array_values($cids);
+      $cached_blocks = cache_get_multiple($cid_values, 'cache_block');
+    }
+  }
 
   foreach ($region_blocks as $key => $block) {
     // Render the block content if it has not been created already.
@@ -862,34 +870,14 @@ function _block_render_blocks($region_blocks) {
       // Erase the block from the static array - we'll put it back if it has
       // content.
       unset($region_blocks[$key]);
-      // Try fetching the block from cache.
-      if ($cacheable && ($cid = _block_get_cache_id($block)) && ($cache = cache_get($cid, 'cache_block'))) {
-        $array = $cache->data;
 
-        // Restore headers, CSS, and JavaScript that would have been added
-        // during the block callback.
-        if (!empty($array['head'])) {
-          drupal_restore_html_head($array['head']);
-        }
-        if (!empty($array['js'])) {
-          drupal_restore_js($array['js']);
-        }
-        if (!empty($array['css'])) {
-          drupal_restore_css($array['css']);
-        }
+      $cid = empty($cids[$key]) ? NULL : $cids[$key];
+
+      // Try fetching the block from the previously loaded cache entries.
+      if (isset($cached_blocks[$cid])) {
+        $array = $cached_blocks[$cid]->data;
       }
       else {
-        if (isset($cid)) {
-          // When a block is cacheable but there is a cache miss, store the
-          // headers/CSS/JS before rendering to save what the block would
-          // have added with the cached version.
-          $before_render = array(
-            'head' => drupal_add_html_head(),
-            'css' => drupal_add_css(),
-            'js' => drupal_add_js(),
-          );
-        }
-
         $array = module_invoke($block->module, 'block_view', $block->delta);
 
         // Allow modules to modify the block before it is viewed, via either
@@ -897,21 +885,6 @@ function _block_render_blocks($region_blocks) {
         drupal_alter(array('block_view', "block_view_{$block->module}_{$block->delta}"), $array, $block);
 
         if (isset($cid)) {
-          // Get CSS and JavaScript after block renders.
-          $after_render = array(
-            'head' => drupal_add_html_head(),
-            'css' => drupal_add_css(),
-            'js' => drupal_add_js(),
-          );
-
-          foreach ($after_render as $key => $values) {
-            // If there are any differences between the old and the new CSS or
-            // JavaScript, store them to be added later.
-            $array[$key] = $added = array_diff_assoc($after_render[$key], $before_render[$key]);
-          }
-
-          // Special-case the settings key and get the difference of the data.
-          $array['js']['settings'] = array_diff_assoc($after_render['js']['settings']['data'], $before_render['js']['settings']['data']);
           cache_set($cid, $array, 'cache_block', CACHE_TEMPORARY);
         }
       }

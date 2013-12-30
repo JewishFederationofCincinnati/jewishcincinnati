@@ -260,7 +260,6 @@ function aggregator_schema() {
     'primary key' => array('iid'),
     'indexes' => array(
       'fid' => array('fid'),
-      'timestamp' => array('timestamp'),
     ),
     'foreign keys' => array(
       'aggregator_feed' => array(
@@ -315,18 +314,9 @@ function aggregator_update_7002() {
  */
 
 /**
- * Add index on timestamp.
- */
-function aggregator_update_7003() {
-  if (!db_index_exists('aggregator_item', 'timestamp')) {
-    db_add_index('aggregator_item', 'timestamp', array('timestamp'));
-  }
-}
-
-/**
  * Increase the length of {aggregator_feed}.url.
  */
-function aggregator_update_7004() {
+function aggregator_update_7003() {
   db_drop_unique_key('aggregator_feed', 'url');
   db_change_field('aggregator_feed', 'url', 'url', array('type' => 'text', 'not null' => TRUE, 'description' => 'URL to the feed.'));
   db_change_field('aggregator_feed', 'link', 'link', array('type' => 'text', 'not null' => TRUE, 'description' => 'The parent website of the feed; comes from the <link> element in the feed.'));

@@ -9,7 +9,7 @@
  * Implements Drupal.behaviors for the Dashboard module.
  */
 Drupal.behaviors.dashboard = {
-    attach: function (context, settings) {
+  attach: function (context, settings) {
     $('#dashboard', context).once(function () {
       $(this).prepend('<div class="customize clearfix"><ul class="action-links"><li><a href="#">' + Drupal.t('Customize dashboard') + '</a></li></ul><div class="canvas"></div></div>');
       $('.customize .action-links a', this).click(Drupal.behaviors.dashboard.enterCustomizeMode);
@@ -211,9 +211,9 @@ Drupal.behaviors.dashboard = {
     $('#dashboard div.region').each(function () {
       var region = $(this).parent().attr('id').replace(/-/g, '_');
       var blocks = $(this).sortable('toArray');
-      for (var i = 0, il = blocks.length; i < il; i += 1) {
-        order.push(region + '[]=' + blocks[i]);
-      }
+      $.each(blocks, function() {
+        order.push(region + '[]=' + this);
+      });
     });
     order = order.join('&');
     return order;

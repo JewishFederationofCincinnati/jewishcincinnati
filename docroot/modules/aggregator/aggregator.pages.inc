@@ -411,9 +411,7 @@ function aggregator_page_rss() {
   // Or, get the default aggregator items.
   else {
     $category = NULL;
-
     $result = db_query_range('SELECT i.*, f.title AS ftitle, f.link AS flink FROM {aggregator_item} i INNER JOIN {aggregator_feed} f ON i.fid = f.fid ORDER BY i.timestamp DESC, i.iid DESC', 0, variable_get('feed_default_items', 10));
-
   }
 
   $feeds = $result->fetchAll();

@@ -62,17 +62,15 @@ Drupal.behaviors.formUpdated = {
  */
 Drupal.behaviors.fillUserInfoFromCookie = {
   attach: function (context, settings) {
-    var userInfo = ['name', 'mail', 'homepage'];
     $('form.user-info-from-cookie').once('user-info-from-cookie', function () {
       var formContext = this;
-      var i, il, $element, cookie;
-      for (i = 0, il = userInfo.length; i < il; i += 1) {
-        $element = $('[name=' + userInfo[i] + ']', formContext);
-        cookie = $.cookie('Drupal.visitor.' + userInfo[i]);
+      $.each(['name', 'mail', 'homepage'], function () {
+        var $element = $('[name=' + this + ']', formContext);
+        var cookie = $.cookie('Drupal.visitor.' + this);
         if ($element.length && cookie) {
           $element.val(cookie);
         }
-      }
+      });
     });
   }
 };

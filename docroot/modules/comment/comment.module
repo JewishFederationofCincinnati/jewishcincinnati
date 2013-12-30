@@ -152,7 +152,7 @@ function comment_node_type_load($name) {
 }
 
 /**
- * Entity URI callback.
+ * Implements callback_entity_info_uri().
  */
 function comment_uri($comment) {
   return array(
@@ -730,12 +730,10 @@ function comment_node_page_additions($node) {
     $comments_per_page = variable_get('comment_default_per_page_' . $node->type, 50);
     if ($cids = comment_get_thread($node, $mode, $comments_per_page)) {
       $comments = comment_load_multiple($cids);
-      if ($comments) {
-        comment_prepare_thread($comments);
-        $build = comment_view_multiple($comments, $node);
-        $build['pager']['#theme'] = 'pager';
-        $additions['comments'] = $build;
-      }
+      comment_prepare_thread($comments);
+      $build = comment_view_multiple($comments, $node);
+      $build['pager']['#theme'] = 'pager';
+      $additions['comments'] = $build;
     }
   }
 
@@ -1358,11 +1356,9 @@ function comment_node_update_index($node) {
     $comments_per_page = variable_get('comment_default_per_page_' . $node->type, 50);
     if ($node->comment && $cids = comment_get_thread($node, $mode, $comments_per_page)) {
       $comments = comment_load_multiple($cids);
-      if ($comments) {
-        comment_prepare_thread($comments);
-        $build = comment_view_multiple($comments, $node);
-        return drupal_render($build);
-      }
+      comment_prepare_thread($comments);
+      $build = comment_view_multiple($comments, $node);
+      return drupal_render($build);
     }
   }
   return '';

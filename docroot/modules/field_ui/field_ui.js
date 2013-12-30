@@ -232,13 +232,10 @@ Drupal.fieldUIOverview = {
     // Separate keys and values.
     var rowNames = [];
     var ajaxElements = [];
-    var rowName;
-    for (rowName in rows) {
-      if (rows.hasOwnProperty(rowName)) {
-        rowNames.push(rowName);
-        ajaxElements.push(rows[rowName]);
-      }
-    }
+    $.each(rows, function (rowName, ajaxElement) {
+      rowNames.push(rowName);
+      ajaxElements.push(ajaxElement);
+    });
 
     if (rowNames.length) {
       // Add a throbber next each of the ajaxElements.

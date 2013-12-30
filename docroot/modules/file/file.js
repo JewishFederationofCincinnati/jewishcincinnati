@@ -14,27 +14,18 @@
  */
 Drupal.behaviors.fileValidateAutoAttach = {
   attach: function (context, settings) {
-    var validateExtension = Drupal.file.validateExtension;
-    var selector, elements;
     if (settings.file && settings.file.elements) {
-      elements = settings.file.elements;
-      for (selector in elements) {
-        if (elements.hasOwnProperty(selector)) {
-          $(selector, context).bind('change', {extensions: elements[selector]}, validateExtension);
-        }
-      }
+      $.each(settings.file.elements, function(selector) {
+        var extensions = settings.file.elements[selector];
+        $(selector, context).bind('change', {extensions: extensions}, Drupal.file.validateExtension);
+      });
     }
   },
   detach: function (context, settings) {
-    var validateExtension = Drupal.file.validateExtension;
-    var selector, elements;
     if (settings.file && settings.file.elements) {
-      elements = settings.file.elements;
-      for (selector in elements) {
-        if (elements.hasOwnProperty(selector)) {
-          $(selector, context).unbind('change', validateExtension);
-        }
-      }
+      $.each(settings.file.elements, function(selector) {
+        $(selector, context).unbind('change', Drupal.file.validateExtension);
+      });
     }
   }
 };

@@ -1,3 +1,4 @@
+
 var Drupal = Drupal || { 'settings': {}, 'behaviors': {}, 'locale': {} };
 
 // Allow other JavaScript libraries to use $.
@@ -69,13 +70,12 @@ $.fn.init.prototype = jquery_init.prototype;
 Drupal.attachBehaviors = function (context, settings) {
   context = context || document;
   settings = settings || Drupal.settings;
-  var i, behaviors = Drupal.behaviors;
   // Execute all of them.
-  for (i in behaviors) {
-    if (behaviors.hasOwnProperty(i) && typeof behaviors[i].attach === 'function') {
-      behaviors[i].attach(context, settings);
+  $.each(Drupal.behaviors, function () {
+    if ($.isFunction(this.attach)) {
+      this.attach(context, settings);
     }
-  }
+  });
 };
 
 /**
@@ -122,13 +122,12 @@ Drupal.detachBehaviors = function (context, settings, trigger) {
   context = context || document;
   settings = settings || Drupal.settings;
   trigger = trigger || 'unload';
-  var i, behaviors = Drupal.behaviors;
   // Execute all of them.
-  for (i in behaviors) {
-    if (behaviors.hasOwnProperty(i) && typeof behaviors[i].detach === 'function') {
-      behaviors[i].detach(context, settings, trigger);
+  $.each(Drupal.behaviors, function () {
+    if ($.isFunction(this.detach)) {
+      this.detach(context, settings, trigger);
     }
-  }
+  });
 };
 
 /**
